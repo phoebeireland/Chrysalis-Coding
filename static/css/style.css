@@ -1,3 +1,39 @@
 body {
-    background-color: hotpink;
+    background: -moz-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    width: auto;
+    height: 60rem;
+    background-repeat: no-repeat;
+}
+
+#welcome-text {
+    font-family: 'Courgette', sans-serif, cursive;
+    vertical-align: middle;
+}
+
+div.container4 {
+    height: 10em;
+    position: relative }
+div.container4 h1 {
+    margin: 0;
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+div.container2 {
+    height: 10em;
+    position: relative }
+div.container2 button {
+    margin: 0;
+    position: absolute;
+    top: 300%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
 }
