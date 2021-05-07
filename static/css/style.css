@@ -12,7 +12,8 @@ body {
 #welcome-text {
     font-family: 'Courgette', sans-serif, cursive;
     vertical-align: middle;
-    font-size: 800%;
+    font-size: 30vh;
+    font-size: 15vw;
 1}
 
 div.container4 {
@@ -33,7 +34,7 @@ div.container2 {
 div.container2 button {
     margin: 0;
     position: absolute;
-    top: 300%;
+    top: 400%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) 
