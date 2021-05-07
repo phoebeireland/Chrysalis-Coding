@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="error-server">
+            <div class="error-server__box-img">
+                <div class="container">                                   
+                    <h1 class="error-server__heading">Oops!<br> 500</h1>
+                    <h3 class="error-server__text">
+                        It looks like that there is an internal server error.
+                    </h3>
+                    <!-- Href Home Button -->
+                    <div> 
+                        <button class="button">
+                            <a href="index.html" aria-label="Back Home!">
+                                Back Home!
+                            </a>
+                        </button>
+                    </div>
+                </div>                
+            </div>
+        </section>  
+{% endblock %}
