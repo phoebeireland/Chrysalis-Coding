@@ -4,7 +4,7 @@ body {
     background: -o-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: -ms-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
-    width: auto;
+    width: 100%;
     height: 60rem;
     background-repeat: no-repeat;
 }
@@ -12,7 +12,8 @@ body {
 #welcome-text {
     font-family: 'Courgette', sans-serif, cursive;
     vertical-align: middle;
-}
+    font-size: 800%;
+1}
 
 div.container4 {
     height: 10em;
@@ -33,7 +34,7 @@ div.container2 button {
     margin: 0;
     position: absolute;
     top: 300%;
-    left: 54%;
+    left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) 
 }
