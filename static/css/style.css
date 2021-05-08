@@ -67,6 +67,10 @@ div.container2 button:hover {
 }
 /* end main page styles */
 
+div.womenintech h2 {
+    text-decoration: underline;
+}
+
 html {
     font-size: 100%;   
 }
