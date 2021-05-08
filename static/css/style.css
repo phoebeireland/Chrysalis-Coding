@@ -6,6 +6,67 @@
     margin: 0;
 }
 
+/* main page styles */
+
+body {
+    background: -moz-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    background: linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
+    width: 100%;
+    height: 60rem;
+    background-repeat: no-repeat;
+}
+
+#welcome-text {
+    font-family: 'Courgette', sans-serif, cursive;
+    vertical-align: middle;
+    font-size: 30vh;
+    font-size: 15vw;
+1}
+
+div.container4 {
+    height: 10em;
+    position: relative }
+div.container4 h1 {
+    margin: 0;
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+div.container2 {
+    height: 10em;
+    position: relative }
+div.container2 button {
+    margin: 0;
+    position: absolute;
+    top: 400%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+div.container2 button {
+    font-size: 30px;
+    background-color: #003249;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+}
+
+div.container2 button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+
+/* end main page styles */
+
 html {
     font-size: 100%;   
 }
