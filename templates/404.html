@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section class="error-notfound">            
+    <section class="error error-notfound">            
         <div class="error__container error__box-img">                                   
             <h1 class="error__heading">Oops!<br> 404</h1>
             <h3 class="error__text">
@@ -11,7 +11,7 @@
             <!-- Href Home Button -->
             <div> 
                 <button class="error__button error__button--notfound">
-                    <a href="index.html" aria-label="Get back!">
+                    <a href="{{url_for('index')}}" aria-label="Get back!">
                         Get back!
                     </a>
                 </button>
