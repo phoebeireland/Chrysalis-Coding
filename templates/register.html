@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="about">
+        <div class="copntainer">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Register for Chrysalis Coding</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    {% if 'username' in session %}
+                        <p class="page-help">You are already logged in!</p>
+                    {% else %}
+                        <p>
+                            Registering for Chrysalis Coding is essential to view the experience and topics being discussed
+                            by Women in Tech! Like your favorite posts, and as this app develops you will also be able to directly
+                            get involved with these discussions, and even share the posts to your peers via your favorite Social Media.
+                        </p>
+                        <p>
+                            Aside from that, as a registered user, you will have the ability to create your own Posts in the
+                            community. Bringing the topic of Women in Tech to the fore, highlighting the positives/negatives of
+                            your own experience working in this Industry and instilling promise in those reading them.
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="form">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="text-center">Register</h2>
+                    <div class="text-center">
+                        {% with alerts = get_flashed_messages(with_categories=true) %}
+                            {% if alerts %}
+                                {% for category, alert in alerts %}
+                                    <div class="alert alert-{{category}}">
+                                        {{ alert }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+
+                    <form action="" method="POST">
+                        {{ form.hidden_tag() }}
+
+                        <div class="form-group">
+                            {{ form.username.label(class="form-control-label") }}
+                            {% if form.username.errors %}
+                                {{ form.username(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.username.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.username(class="form-control", placeholder="Username should be between 5-15 characters in length!", required=False) }}
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.password.label(class="form-control-label") }}
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password(class="form-control", placeholder="Password should be 5-12 characters in length!", required=False) }}
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.password_confirm.label(class="form-control-label") }}
+                            {% if form.password_confirm.errors %}
+                                {{ form.password_confirm(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.password_confirm.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password_confirm(class="form-control", placeholder="Retype Password!", required=False) }}
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group text-center">
+                            {{ form.submit(class="btn btn-primary custom-form-btn") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
