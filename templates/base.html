@@ -18,7 +18,7 @@
         {% block navbar %}
             <nav class="navbar navbar-expand-md navbar-light" style="background-color: #fdf5bf;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">Chrysalis Coding</a>
+                    <a class="navbar-brand" href="{{url_for('index')}}">Chrysalis Coding</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                                 <a class="nav-link active" aria-current="page" href="#">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Insipirational Women in Tech</a>
+                                <a class="nav-link" href="{{url_for('inspirationalwomenintechpage')}}">Insipirational Women in Tech</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Main Page</a>
