@@ -11,12 +11,9 @@ if path.exists("env.py"):
     import env
 
 app = Flask(__name__)
-
-app.config.update(
-    MONGO_DB = os.environ.get('MONGO_DB'),
-    MONGO_URI = os.environ.get('MONGO_URI'),
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-)
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+app.config["MONGO_DB"] = os.environ.get('MONGO_DB')
+app.config["SECRET_KEY"] = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
