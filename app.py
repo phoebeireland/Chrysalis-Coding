@@ -85,6 +85,21 @@ def logout():
     return redirect(url_for('index'))
 
 
+@app.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
+
+
+@app.route('/accessibility')
+def accessibility():
+    return render_template('accessibility.html')
+
+
+@app.route('/wit')
+def wit():
+    return render_template('inspirationalwomenintechpage.html')
+
+
 if __name__ == "__main__":
     app.run(
         host = os.environ.get('IP', '127.0.0.1'),

@@ -165,14 +165,23 @@ body {
     background: #003249;
 }
 
+div.womenintech h2 {
+    text-decoration: underline;
+}
+
+.inspirationalwomenpics {
+    width: 70%;
+    height: auto;
+}
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* Registration page */
+/* Registration & Login page */
 
-.register-wit {
+.registerlogin-wit {
     height: 150px;
     object-fit: contain;
     min-height: 100%;
@@ -224,6 +233,44 @@ a {
     margin: 0px auto;   
 }
 
+/*PAGES*/
+/*Privacy*/
+.content--privacy {
+    color: #FDF5BF;
+    font-family: 'Montserrat Alternates', sans-serif;    
+    margin-top: 77px;    
+}
+
+.card--privacy {
+    margin-bottom: 3rem;    
+    background-color: rgba(83, 19, 30, 0.8);
+    box-shadow: 0 0 1rem #53131E, 0 0 2rem #FE5F55;
+}
+
+.bg-logo--privacy {
+    background-image: url(../images/logo/logo-dark_sienna.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: drop-shadow(0 0 0.125rem #FE5F55);        
+}
+
+.card-title--privacy {
+    margin-bottom: 0;
+    padding: 5% 0;
+    font-family: 'Courgette', sans-serif, cursive;
+    font-size: 3.5rem;
+    text-shadow: 0 0 0.2rem #53131E, 0 0 0.2rem #53131E;
+}
+
+h2.card-subtitle {
+    font-family: 'Courgette', sans-serif, cursive;
+}
+
+.card-body--privacy {
+    padding: 1.25rem 2rem;
+}
+
+/*Error*/
 .error {
     height: 100vh;    
     font-family: 'Luckiest Guy', cursive;
@@ -267,6 +314,13 @@ a {
 /** Breakpoints */
 /** 400px or smaller */
 @media (max-width: 25rem) {
+    .bg-logo--privacy {    
+        background-size: 95%;
+    }
+    .card-title--privacy {        
+        font-size: 2rem;
+    } 
+
     .error__heading {    
     font-size: 5rem;  
     }
@@ -274,6 +328,16 @@ a {
         padding: 1rem;        
         font-size: 1.2rem;        
     }    
+}
+
+/** 704px or smaller */
+@media (max-width: 44rem) {
+    .bg-logo--privacy {    
+        background-size: 65%;        
+    }
+    .card-title--privacy {        
+        font-size: 2.5rem;
+    } 
 }
 
 /* Medium screen device */
@@ -300,4 +364,11 @@ a {
     .custom-form {
         width: 60%;
     }
+}
+
+/** 1072px or smaller */
+@media (max-width: 67rem) {
+    .bg-logo--privacy {    
+        background-size: 55%;
+    }  
 }
