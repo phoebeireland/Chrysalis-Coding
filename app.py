@@ -46,6 +46,7 @@ def register():
                 'password': hashed_pw
             })
             session['username'] = request.form.get('username')
+            flash(f'Thank you for Registering. You are now signed in!', 'primary')
             return redirect(url_for('index'))
         else:
             flash(f'Duplicate account detected. Please try again!', 'danger')
