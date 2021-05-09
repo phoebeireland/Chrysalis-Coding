@@ -71,6 +71,11 @@ div.womenintech h2 {
     text-decoration: underline;
 }
 
+.inspirationalwomenpics {
+    width: 70%;
+    height: auto;
+}
+
 html {
     font-size: 100%;   
 }
