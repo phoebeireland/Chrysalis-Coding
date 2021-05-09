@@ -13,6 +13,9 @@ def index():
 def privacy():
     return render_template('privacy.html')
 
+@app.route('/accessibility')
+def accessibility():
+    return render_template('accessibility.html')
 
 @app.route('/wit')
 def wit():
