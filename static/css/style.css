@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@100;300;400;700&display=swap');
 /*base*/
 * {
     box-sizing: border-box;
@@ -6,65 +6,173 @@
     margin: 0;
 }
 
-/* main page styles */
+/* Global */
+
+html {
+    font-size: 100%;   
+}
 
 body {
+    /* width: 100%; */
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background: -moz-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: -webkit-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: -o-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: -ms-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
-    width: 100%;    
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-#welcome-text {
-    font-family: 'Courgette', sans-serif, cursive;
-    vertical-align: middle;
-    font-size: 30vh;
-    font-size: 15vw;
+.content {
+    margin: 75px auto 0;
+    flex: 1;
 }
 
-div.container4 {
-    height: 10em;
-    position: relative }
-div.container4 h1 {
-    margin: 0;
-    position: absolute;
-    top: 250%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) 
+.brand-logo {
+    background-image: url(../images/logo/logo-dark_sienna.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 200px;
 }
 
-div.container2 {
-    height: 10em;
-    position: relative }
-div.container2 button {
-    margin: 0;
-    position: absolute;
-    top: 400%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) 
+/* Navbar */
+
+.navbar-bg {
+    background-color: #fdf5bf;
 }
 
-div.container2 button {
-    font-size: 30px;
+/* Card component */
+
+.card {
+    margin: 1.5rem;
+    max-width: 20rem;
+    border: 1px solid #003249;
+    border-radius: 1rem;
+}
+
+.card-text {
+    font-family: "Roboto", sans-serif;
+}
+
+/* Button component */
+
+.btn {
+    background-color: #65c4c0;
+    color: #001c29;
+    border-color: #001c29;
+}
+
+.btn:hover {
     background-color: #003249;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 12px;
+    border-color: #003249;
 }
 
-div.container2 button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+/* Utility classes */
+
+.page-desc {
+    margin: 0 1rem 1rem;
+    font-family: "Roboto", sans-serif;
 }
-/* end main page styles */
+
+.about-title {
+    font-family: "Maven Pro", sans-serif;
+}
+
+.about-title:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 5px auto;
+    background: #003249;
+}
+
+.about-row {
+    margin: 1rem auto;
+    align-items: center;
+}
+
+.custom-form {
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #fdf5bf;
+    border: 1px solid #003249;
+    border-radius: 1rem;
+    background-clip: border-box;
+    width: 90%;
+}
+
+.custom-form h2 {
+    font-family: "Maven Pro", sans-serif;
+}
+
+.custom-form h2:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 5px auto;
+    background: #003249;
+}
+
+.form-group {
+    margin: 1rem 0;
+}
+
+/* main page styles */
+
+.hero-image {
+    height: 80vh;
+    background: url(../images/pexels-august-de-richelieu-4260325.jpg) no-repeat center 60%;
+    background-size: cover;
+    color: #003249;
+}
+
+.greeting {
+    margin: 1.4rem 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.greeting::after {
+    content: '';
+    display: block;
+    margin: 0 auto 1rem;
+    width: 60%;
+    height: 1px;
+    background-color: #003249;
+}
+
+.brand-logo svg {
+    fill: #53131E;
+}
+
+.card-row {
+    justify-content: center;
+}
+
+.hca-title {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: bold;
+}
+
+    /* Small dividers to break the card info up */
+.hca-title::after, .hca-p2::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 5px auto;
+    background: #003249;
+}
 
 div.womenintech h2 {
     text-decoration: underline;
@@ -75,17 +183,20 @@ div.womenintech h2 {
     height: auto;
 }
 
-html {
-    font-size: 100%;   
-}
-
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/*COMPONENTS*/
-/*button*/
+/* Registration & Login page */
+
+.registerlogin-wit {
+    height: 200px;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+/* Error page buttons */
 .error__button {
     display: inline-block;  
     padding: 0.5rem 0.6rem;
@@ -93,13 +204,17 @@ a {
     
     color: #FDF5BF;
     font-size: 1.2rem;
-    font-weight: bold;   
-    text-shadow: 0 0 0.2rem black;
+    font-weight: lighter;
+    text-shadow: 0 0 0.3rem black;
 
     border-radius: 2rem;
     box-shadow: 0 0 0.15rem #FDF5BF;
 
     cursor: pointer;
+}
+
+.error__button a:hover {
+    color: #e6dead;
 }
 
 .error__button--notfound {
@@ -118,8 +233,8 @@ a {
     background-color: rgb(13, 131, 127);
 }
 
-/*LAYOUT*/
-/*container*/
+/* Error pages */
+
 .error__container {  
     max-width: 40rem;/*720px*/
     margin: 0px auto;   
@@ -171,7 +286,7 @@ h2.card-subtitle {
 }
 
 .error__box-img {    
-    background-image: url(img/logo-blond.svg);
+    background-image: url(../images/logo/logo-blond.svg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -191,13 +306,13 @@ h2.card-subtitle {
   text-shadow: 0 0 0.125rem black;
 }
 
-/*404*/
+/* 404 */
 .error-notfound {    
     color: #FE5F55;    
     background-color: #53131E;
 }
 
-/*500*/
+/* 500 */
 .error-server {    
     color: #48A9A6;    
     background-color: #003249;
@@ -221,6 +336,7 @@ h2.card-subtitle {
         font-size: 1.2rem;        
     }    
 }
+
 /** 704px or smaller */
 @media (max-width: 44rem) {
     .bg-logo--privacy {    
@@ -230,6 +346,33 @@ h2.card-subtitle {
         font-size: 2.5rem;
     } 
 }
+
+/* Medium screen device */
+@media (min-width: 768px) {
+    .card {
+        max-width: 25rem;
+    }
+
+    .registerlogin-wit {
+        height: 300px;
+    }
+
+    .custom-form {
+        width: 80%;
+    }
+}
+
+/* Large screen device */
+@media (min-width: 992px) {
+    .card {
+        max-width: 30rem;
+    }
+
+    .custom-form {
+        width: 60%;
+    }
+}
+
 /** 1072px or smaller */
 @media (max-width: 67rem) {
     .bg-logo--privacy {    
