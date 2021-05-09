@@ -52,9 +52,30 @@ def register():
             flash(f'Duplicate account detected. Please try again!', 'danger')
             return redirest(url_for('register'))
     
-    return render_template(
-        'register.html', title='Register', form=register_form
-        )
+    return render_template('register.html', title='Register', form=register_form)
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    login_form = LoginForm()
+
+    if login_form.validate_on_submit():
+        found_username = users.find_one({
+            'username': request.form['username']
+        })
+
+        if found_username:
+            if bcrypt.check_password_hash(
+                found_username['password'], request.form.get('password').encode('utf-8')):
+                session['username'] = request.form.get('username')
+                session['logged-in'] = True
+                flash(f'You are now logged in.', 'primary')
+                return redirect(url_for('index'))
+
+        flash(f'Login details not found. Please try again', 'danger')
+        return redirect(url_for('login'))
+
+    return render_template('login.html', title='Login', form=login_form)
 
 
 @app.route('/logout')

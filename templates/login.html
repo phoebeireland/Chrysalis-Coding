@@ -5,7 +5,7 @@
         <div class="container content">
             <div class="row">
                 <div class="col-sm-12 text-center about-title">
-                    <h2>Register for Chrysalis Coding</h2>
+                    <h2>Login to Chrysalis Coding</h2>
                 </div>
             </div>
             <div class="row about-row">
@@ -14,19 +14,20 @@
                         <p class="page-help">You are already logged in!</p>
                     {% else %}
                         <p>
-                            Registering for Chrysalis Coding is essential to view the experience and topics being discussed
-                            by Women in Tech! Like your favorite posts, and as this app develops you will also be able to directly
-                            get involved with these discussions, and even share the posts to your peers via your favorite Social Media.
+                            Login to Chrysalis Coding and become inspired by interacting/viewing with the wider community at large.
+                            Read posts left by others, detailing their experiences in the field. Learn from them, or add to their
+                            experiences so that the future has solid footholds in this industry. Women in Tech now have a place to
+                            share experiences and experience them together!
                         </p>
                         <p>
-                            Aside from that, as a registered user, you will have the ability to create your own Posts in the
-                            community. Bringing the topic of Women in Tech to the fore, highlighting the positives/negatives of
-                            your own experience working in this Industry and instilling promise in those reading them.
+                            You can create/update/delete your own posts, while having the ability to upvote posts from your peers within
+                            the community. As this application develops, its reach will grow and the community of like minded individuals
+                            will develop and shape this apps future. Login, get involved, and be an advocate for Women in Tech everywhere.
                         </p>
                     {% endif %}
                 </div>
                 <div class="col-sm-12 col-lg-6 text-center">
-                    <img src="{{ url_for('static', filename='images/register-wit.jpg') }}" alt="Women in Tech talking" class="register-wit img-fluid">
+                    <img src="{{ url_for('static', filename='images/login-wit.jpg') }}" alt="Woman in Tech Coding" class="register-wit img-fluid">
                 </div>
             </div>
         </div>
@@ -37,7 +38,7 @@
             <div class="form">
                 <div class="row form-row">
                     <div class="col-sm-12 custom-form">
-                        <h2 class="text-center">Register</h2>
+                        <h2 class="text-center">Login</h2>
                         <div class="text-center">
                             {% with alerts = get_flashed_messages(with_categories=true) %}
                                 {% if alerts %}
@@ -63,7 +64,7 @@
                                         {% endfor %}
                                     </div>
                                 {% else %}
-                                    {{ form.username(class="form-control", placeholder="Limit of 5-15 characters", required=False) }}
+                                    {{ form.username(class="form-control", placeholder="Please enter username.", required=False) }}
                                 {% endif %}
                             </div>
     
@@ -77,21 +78,7 @@
                                         {% endfor %}
                                     </div>
                                 {% else %}
-                                    {{ form.password(class="form-control", placeholder="Limit of 5-12 characters", required=False) }}
-                                {% endif %}
-                            </div>
-    
-                            <div class="form-group">
-                                {{ form.password_confirm.label(class="form-control-label") }}
-                                {% if form.password_confirm.errors %}
-                                    {{ form.password_confirm(class="form-control is-invalid") }}
-                                    <div class="form-errors">
-                                        {% for error in form.password_confirm.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{ form.password_confirm(class="form-control", placeholder="Retype Password!", required=False) }}
+                                    {{ form.password(class="form-control", placeholder="Please enter password.", required=False) }}
                                 {% endif %}
                             </div>
     
