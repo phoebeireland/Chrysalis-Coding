@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% set active_page = 'register' %}
 
 {% block content %}
     <section class="about">
-        <div class="copntainer">
+        <div class="container content">
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <h2>Register for Chrysalis Coding</h2>
@@ -30,71 +31,73 @@
     </section>
 
     <div class="section">
-        <div class="form">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center">Register</h2>
-                    <div class="text-center">
-                        {% with alerts = get_flashed_messages(with_categories=true) %}
-                            {% if alerts %}
-                                {% for category, alert in alerts %}
-                                    <div class="alert alert-{{category}}">
-                                        {{ alert }}
+        <div class="container">
+            <div class="form">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-center">Register</h2>
+                        <div class="text-center">
+                            {% with alerts = get_flashed_messages(with_categories=true) %}
+                                {% if alerts %}
+                                    {% for category, alert in alerts %}
+                                        <div class="alert alert-{{category}}">
+                                            {{ alert }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+    
+                        <form action="" method="POST">
+                            {{ form.hidden_tag() }}
+    
+                            <div class="form-group">
+                                {{ form.username.label(class="form-control-label") }}
+                                {% if form.username.errors %}
+                                    {{ form.username(class="form-control is-invalid") }}
+                                    <div class="form-errors">
+                                        {% for error in form.username.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
                                     </div>
-                                {% endfor %}
-                            {% endif %}
-                        {% endwith %}
+                                {% else %}
+                                    {{ form.username(class="form-control", placeholder="Username should be between 5-15 characters in length!", required=False) }}
+                                {% endif %}
+                            </div>
+    
+                            <div class="form-group">
+                                {{ form.password.label(class="form-control-label") }}
+                                {% if form.password.errors %}
+                                    {{ form.password(class="form-control is-invalid") }}
+                                    <div class="form-errors">
+                                        {% for error in form.password.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.password(class="form-control", placeholder="Password should be 5-12 characters in length!", required=False) }}
+                                {% endif %}
+                            </div>
+    
+                            <div class="form-group">
+                                {{ form.password_confirm.label(class="form-control-label") }}
+                                {% if form.password_confirm.errors %}
+                                    {{ form.password_confirm(class="form-control is-invalid") }}
+                                    <div class="form-errors">
+                                        {% for error in form.password_confirm.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.password_confirm(class="form-control", placeholder="Retype Password!", required=False) }}
+                                {% endif %}
+                            </div>
+    
+                            <div class="form-group text-center mt-4">
+                                {{ form.submit(class="btn btn-primary custom-form-btn") }}
+                            </div>
+                        </form>
                     </div>
-
-                    <form action="" method="POST">
-                        {{ form.hidden_tag() }}
-
-                        <div class="form-group">
-                            {{ form.username.label(class="form-control-label") }}
-                            {% if form.username.errors %}
-                                {{ form.username(class="form-control is-invalid") }}
-                                <div class="form-errors">
-                                    {% for error in form.username.errors %}
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                {{ form.username(class="form-control", placeholder="Username should be between 5-15 characters in length!", required=False) }}
-                            {% endif %}
-                        </div>
-
-                        <div class="form-group">
-                            {{ form.password.label(class="form-control-label") }}
-                            {% if form.password.errors %}
-                                {{ form.password(class="form-control is-invalid") }}
-                                <div class="form-errors">
-                                    {% for error in form.password.errors %}
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                {{ form.password(class="form-control", placeholder="Password should be 5-12 characters in length!", required=False) }}
-                            {% endif %}
-                        </div>
-
-                        <div class="form-group">
-                            {{ form.password_confirm.label(class="form-control-label") }}
-                            {% if form.password_confirm.errors %}
-                                {{ form.password_confirm(class="form-control is-invalid") }}
-                                <div class="form-errors">
-                                    {% for error in form.password_confirm.errors %}
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                {{ form.password_confirm(class="form-control", placeholder="Retype Password!", required=False) }}
-                            {% endif %}
-                        </div>
-
-                        <div class="form-group text-center">
-                            {{ form.submit(class="btn btn-primary custom-form-btn") }}
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

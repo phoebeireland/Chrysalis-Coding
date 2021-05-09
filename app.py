@@ -1,6 +1,6 @@
 import os
 from os import path
-from flask import Flask, render_template, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_bcrypt import Bcrypt
@@ -19,6 +19,7 @@ app.config.update(
 )
 
 mongo = PyMongo(app)
+bcrypt = Bcrypt(app)
 users = mongo.db.users
 posts = mongo.db.posts
 
@@ -39,8 +40,7 @@ def register():
         })
 
         if not found_username:
-            hashed_pw = Bcrypt.generate_password_hash(
-                request.form['password']).decode('utf-8')
+            hashed_pw = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
             users.insert_one({
                 'username': register_form.username.data,
                 'password': hashed_pw
@@ -55,6 +55,12 @@ def register():
         'register.html', title='Register', form=register_form
         )
 
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash(f'Thank you for inspiring Women in Tech. See you soon!', 'primary')
+    return redirect(url_for('index'))
 
 
 if __name__ == "__main__":
