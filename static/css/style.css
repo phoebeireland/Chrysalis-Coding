@@ -36,6 +36,14 @@ body {
     flex: 1;
 }
 
+.brand-logo {
+    background-image: url(../images/logo/logo-dark_sienna.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 200px;
+}
+
 /* Navbar */
 
 .navbar-bg {
@@ -90,6 +98,7 @@ body {
 
 .about-row {
     margin: 1rem auto;
+    align-items: center;
 }
 
 .custom-form {
@@ -182,10 +191,8 @@ a {
 /* Registration & Login page */
 
 .registerlogin-wit {
-    height: 150px;
+    height: 200px;
     object-fit: contain;
-    min-height: 100%;
-    max-height: none;
     border-radius: 1rem;
 }
 
@@ -346,8 +353,8 @@ h2.card-subtitle {
         max-width: 25rem;
     }
 
-    .register-wit {
-        height: 200px;
+    .registerlogin-wit {
+        height: 300px;
     }
 
     .custom-form {
