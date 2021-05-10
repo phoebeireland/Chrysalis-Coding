@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 text-center about-title">
+                    <h2>Create Post</h2>
+                </div>
+            </div>
+            <div class="row about-row">
+                <div class="col-sm-12 text-center">
+                    {% if 'username' in session %}
+                    <p class="page-desc">
+                        Welcome {{ session['username'] }}. Here at Chrysalis Coding, the main idea is to bring attention to the 
+                        positive or negative experiences of working as a Woman in Tech. We want to be sure that future generations 
+                        have a foothold in this industry and a voice to be heard, by learning from the experiences of their predecessors. 
+                    </p>
+                    <p class="page-desc">
+                        Advocating change through community! As a Woman in Tech/as an advocate for Women in Tech, we know that your career and skills utilised have a deep impact in the industry, but more so to the Women all around the world coming after you,
+                        making their start in this profession. <a href="https://www.womenintech.co.uk/8-facts-women-tech-industry" target="_blank">19%</a>* of the working populace of Tech is attributed to Women in Tech, 19%. Your posts could impact somebody reading them to take those first tentative steps, and could bolster that number for years to come!
+                    </p>
+                    {% else %}
+                    <p class="page-desc">You are not logged in to view this page. Please login!</p>
+                    <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                    {% endif %}
+                </div>
+                <div class="col-sm-12 brand-logo" aria-label="Brand Logo"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Defensive element of Section - hidden if user is not logged in. -->
+    {% if 'username' in session %}
+    <section class="lower-section">
+        <div class="container">
+            <div class="row custom-form-row">
+                <div class="col-sm-12 custom-form">
+                    <h2 class="custom-form-header text-center">Create Post</h2>
+                    <form action="" method="POST">
+                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
+                        {{ form.hidden_tag() }}
+
+                        <!-- Form elements to create workout -->
+                        <div class="form-group">
+                            {{ form.title.label(class="form-control-label") }}
+                            {% if form.title.errors %}
+                                {{ form.title(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.title.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.title(class="form-control", placeholder="Post Title", required=False) }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.content.label(class="form-control-label") }}
+                            {% if form.content.errors %}
+                                {{ form.content(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.content.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.content(class="form-control", placeholder="Have something to type?", required=False) }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group marginreset">
+                            {{ form.inspirational_quote.label(class="form-control-label") }}
+                            {{ form.inspirational_quote(class="form-control", placeholder="Inspire someone!", required=False) }}
+                        </div>
+                        <small class="sub-text">This field is optional.</small>
+                        <div class="form-group text-center">
+                            {{ form.submit(class="btn btn-primary custom-form-btn") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <div id="restricted-access"></div>
+    {% endif %}
+{% endblock %}

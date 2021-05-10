@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 text-center about-title">
+                    <h2>Edit Post</h2>
+                </div>
+            </div>
+            <div class="row about-row">
+                <div class="col-sm-12 text-center">
+                    {% if 'username' in session %}
+                    <p class="page-desc">
+                        Hi {{ session['username'] }}, below you will find one of your previously created Posts, Title: "{{ post.title }}",
+                        that you can now edit. 
+                    </p>
+                    <p class="page-desc">
+                        Apart from your username & date, all of the below are editable & customisable to suit any new information you need to add.
+                    </p>
+                    <p class="page-desc">
+                        Click/Tap into any of the fields below to edit your information.
+                    </p>
+                    {% else %}
+                    <p class="page-desc">You are not logged in to view this page. Please login!</p>
+                    <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                    {% endif %}
+                </div>
+                <div class="col-sm-12 brand-logo" aria-label="Brand Logo"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Defensive element of Section - hidden if user is not logged in. -->
+    {% if 'username' in session %}
+    <section class="lower-section">
+        <div class="container">
+            <div class="row custom-form-row">
+                <div class="col-sm-12 custom-form">
+                    <h2 class="custom-form-header text-center">Edit Post</h2>
+                    <form action="" method="POST">
+                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
+                        {{ form.hidden_tag() }}
+
+                        <!-- Form elements to create workout -->
+                        <div class="form-group">
+                            {{ form.title.label(class="form-control-label") }}
+                            {% if form.title.errors %}
+                                {{ form.title(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.title.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.title(class="form-control", placeholder="Post Title", required=False) }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.content.label(class="form-control-label") }}
+                            {% if form.content.errors %}
+                                {{ form.content(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.content.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.content(class="form-control", placeholder="Have something to type?", required=False) }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group marginreset">
+                            {{ form.inspirational_quote.label(class="form-control-label") }}
+                            {{ form.inspirational_quote(class="form-control", placeholder="Inspire someone!", required=False) }}
+                        </div>
+                        <small class="sub-text">This field is optional.</small>
+                        <div class="form-group text-center">
+                            {{ form.submit(class="btn btn-primary custom-form-btn") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <div id="restricted-access"></div>
+    {% endif %}
+{% endblock %}
