@@ -209,17 +209,13 @@ form .marginreset {
 
 /* WIT page */
 
-div.womenintech h2 {
-    text-decoration: underline;
-}
-
 .inspirationalwomenpics {
     width: 70%;
     height: auto;
 }
 
 a {
-    text-decoration: none;
+    text-decoration-line: none;
 }
 
 /* Forum */
