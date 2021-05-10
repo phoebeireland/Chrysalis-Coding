@@ -318,6 +318,12 @@ h2.card-subtitle {
     background-color: #003249;
 }
 
+/*About*/
+.profile-pic {
+    height: 100px;
+    width: 100px;
+}
+
 /** Breakpoints */
 /** 400px or smaller */
 @media (max-width: 25rem) {
