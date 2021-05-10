@@ -324,6 +324,37 @@ h2.card-subtitle {
     width: 100px;
 }
 
+/*Footer*/
+.footer{
+    margin-top: 1rem;
+    padding-top: 1rem;
+    background-color: #fdf5bf;
+}
+
+.footer__icons-row {
+    margin-top: 1rem;
+}
+.footer__ul {
+    list-style-type: none;    
+}
+
+.footer__list-item-link {
+    color: black;
+}
+
+.footer__list-item-link:hover {
+    color: rgb(71, 69, 69);
+    text-decoration: none;
+}
+
+.footer__icons {
+    text-align: center;
+    font-size: xx-large;    
+    border: 0;
+    border-radius: 0;
+    margin: 20px 0px;
+}
+
 /** Breakpoints */
 /** 400px or smaller */
 @media (max-width: 25rem) {
