@@ -204,6 +204,10 @@ a {
 
 /* Forum */
 
+.forum-row {
+    justify-content: center;
+}
+
 .forum-post {
     position: relative;
     margin: 1rem;
@@ -227,7 +231,7 @@ a {
 
 .post-details {
     white-space: pre-wrap;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 1.5rem 2rem;
     font-family: "Roboto", sans-serif;
 }
