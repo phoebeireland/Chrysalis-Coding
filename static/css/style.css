@@ -271,6 +271,10 @@ a {
     cursor: pointer;
 }
 
+.error__button a {
+    color: #FDF5BF;
+}
+
 .error__button a:hover {
     color: #e6dead;
 }
