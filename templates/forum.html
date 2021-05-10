@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 text-center about-title">
+                    <h2>Women in Tech Forum</h2>
+                </div>
+            </div>
+            <div class="row about-row">
+                <div class="col-sm-12 text-center">
+                    {% if 'username' in session %}
+                    <p class="page-desc">
+                        Welcome {{ session['username'] }}. 
+                    </p>
+                    <p class="page-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, illo.
+                    </p>
+                    {% else %}
+                    <p class="page-desc">You are not logged in to view this page. Please login!</p>
+                    <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                    {% endif %}
+                </div>
+                <div class="col-sm-12 brand-logo" aria-label="Brand Logo"></div>
+            </div>
+        </div>
+    </section>
+
+    {% for post in posts %}
+        <p>{{ post.title }}</p>
+        <p>{{ post.content }}</p>
+        <p>{{ post.inspirational_quote }}</p>
+        <p>{{ post.username }}</p>
+        <p>{{ post.date }}</p>
+    {% endfor %}
+{% endblock %}
