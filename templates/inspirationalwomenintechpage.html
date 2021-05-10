@@ -9,7 +9,7 @@
                 <h2>Inspirational Women in Tech</h2>
             </div>
         </div>
-        <div class="row about-row page-desc">
+        <div class="row about-row page-desc text-center">
             <div>
                 <p>Welcome to the Inspirational Women in Tech page! Role models are important for any
                     field, and in the field of technology women have, for centuries, been an influential presence.
@@ -19,10 +19,13 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
+
+        <div class="row my-5 text-center about-row page-desc">
+            <div class="col-md-4">
                 <img src="{{ url_for('static', filename='images/adalovelace-tinyfied.jpg') }}" alt="painting of Ada Lovelace"
-                    class="inspirationalwomenpics">
+                    class="registerlogin-wit img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h3>Ada Lovelace</h3>
                 <p>It would be remiss of any page dedicated to inspirational women in tech not to start with Ada Lovelace.
                     As the child of Lord Byron, she was given extensive tuition in mathematics and science.
@@ -35,10 +38,8 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ url_for('static', filename='images/reshmasaujani1-tinyfied.png') }}" alt="picture of Reshma Saujani"
-                    class="inspirationalwomenpics">
+        <div class="row my-5 text-center about-row page-desc">
+            <div class="col-md-8">
                 <h3>Reshma Saujani</h3>
                 <p>Reshma Saujani is the founder and CEO of Girls Who Code, a non-profit organisation that works to try and
                     close the gender gap in the tech industry. She spoke at the 2017 American Library Association Conference
@@ -48,11 +49,17 @@
                         target=_blank>here</a>.
                 </p>
             </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/reshmasaujani1-tinyfied.png') }}" alt="picture of Reshma Saujani"
+                    class="registerlogin-wit img-fluid">
+            </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
+        <div class="row my-5 text-center about-row page-desc">
+            <div class="col-md-4">
                 <img src="{{ url_for('static', filename='images/ellenkpao1-tinyfied.png') }}" alt="picture of Ellen K. Pao"
-                    class="inspirationalwomenpics">
+                    class="registerlogin-wit img-fluid">
+            </div>
+            <div class="col-md-8">
                 <h3>Ellen K. Pao</h3>
                 <P> Ellen K. Pao is the co-founder and CEO of Project Include, which is a non-profit organisation that is
                     focused on improving diversity within the tech industry. She is a former CEO of Reddit and has written
@@ -63,10 +70,8 @@
                 </P>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ url_for('static', filename='images/kimberlybryant1-tinyfied.png') }}" alt="picture of Kiberly Bryant"
-                    class="inspirationalwomenpics">
+        <div class="row my-5 text-center about-row page-desc">
+            <div class="col-md-8">
                 <h3>Kimberly Bryant</h3>
                 <p>Kimberly Bryant is the founder and CEO of Black Girls Code, which strives to increase the number of women
                     in colour in tech. In 2013, she was recognised as a White House Champion of Change for Tech Inclusion,
@@ -77,8 +82,11 @@
                         target=_blank>here</a>.
                 </p>
             </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/kimberlybryant1-tinyfied.png') }}" alt="picture of Kiberly Bryant"
+                    class="registerlogin-wit img-fluid">
+            </div>
         </div>
-    </div>
 </section>
 
 {% endblock %}
