@@ -107,6 +107,12 @@ def forum():
     return render_template('forum.html', title='forum', posts=posts.find())
 
 
+@app.route('/post-view/<post_id>')
+def post_view(post_id):
+    post = posts.find_one({'_id': ObjectId(post_id)})
+    return render_template('post-view.html', post=post)
+
+
 @app.route('/create-post', methods=['GET', 'POST'])
 def create_post():
     create_post_form = CreatePost()
@@ -114,7 +120,7 @@ def create_post():
     if create_post_form.validate_on_submit():
         posts.insert_one({
             'username': session['username'],
-            'date': datetime.datetime.utcnow().strftime('%H:%M:%S - %d/%m/%Y'),
+            'date': datetime.datetime.utcnow().strftime('%d/%m/%Y'),
             'title': create_post_form.title.data,
             'content': create_post_form.content.data,
             'inspirational_quote': create_post_form.inspirational_quote.data

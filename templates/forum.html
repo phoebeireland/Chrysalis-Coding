@@ -27,11 +27,26 @@
         </div>
     </section>
 
-    {% for post in posts %}
-        <p>{{ post.title }}</p>
-        <p>{{ post.content }}</p>
-        <p>{{ post.inspirational_quote }}</p>
-        <p>{{ post.username }}</p>
-        <p>{{ post.date }}</p>
-    {% endfor %}
+    <section class="lower-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="about-title">Posts</h2>
+                </div>
+                {% for post in posts %}
+                <div class="col-md-12 col-lg-6 text-center">
+                    <div class="forum-post">
+                        <!-- Anchor element with empty span used to allow user to click anywhere on post
+                            to be brought to full post view -->
+                        <a href="{{ url_for('post_view', post_id=post._id) }}">
+                            <span class="div-url-overlay"></span>
+                        </a>
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.content|truncate(40) }} <span><small class="sub-text">{{ post.username }} - {{ post.date }}</small></span></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
