@@ -67,7 +67,7 @@
                         Read about these inspiration Women in Tech. Those who came before and had to strive
                         to prove themselves in a male-dominated industry.
                     </p>
-                    <a href="" class="btn btn-primary">Women in Tech</a>
+                    <a href="{{ url_for('wit') }}" class="btn btn-primary">Women in Tech</a>
                     {% else %}
                     <h5 class="card-title hca-title">Register with Chrysalis</h5>
                     <p class="card-text">
@@ -94,7 +94,7 @@
                         Create your own posts or read from another. Grow by discussing, and detail your experiences
                         to date to the community.
                     </p>
-                    <a href="" class="btn btn-primary">WIT Forum</a>
+                    <a href="{{ url_for('forum') }}" class="btn btn-primary">WIT Forum</a>
                     {% else %}
                     <h5 class="card-title hca-title">Login to Chrysalis</h5>
                     <p class="card-text">

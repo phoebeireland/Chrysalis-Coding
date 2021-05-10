@@ -1,7 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 versions
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@100;300;400;700&display=swap');
 /*base*/
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -13,7 +21,6 @@ html {
 }
 
 body {
-    /* width: 100%; */
     min-height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -22,10 +29,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background: -moz-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: -o-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background: linear-gradient(45deg, rgba(72,169,166,1) 0%, rgba(255,255,255,1) 50%, rgba(254,95,85,1) 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -33,7 +37,9 @@ body {
 
 .content {
     margin: 75px auto 0;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .brand-logo {
@@ -66,7 +72,9 @@ body {
 
 .about-row {
     margin: 1rem auto;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .sub-text {
@@ -179,7 +187,9 @@ form .marginreset {
 }
 
 .card-row {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .hca-title {
@@ -215,7 +225,9 @@ a {
 /* Forum */
 
 .forum-row {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .forum-post {
@@ -250,7 +262,8 @@ a {
 
 .registerlogin-wit {
     height: 200px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     border-radius: 1rem;
 }
 
@@ -266,7 +279,8 @@ a {
     text-shadow: 0 0 0.3rem black;
 
     border-radius: 2rem;
-    box-shadow: 0 0 0.15rem #FDF5BF;
+    -webkit-box-shadow: 0 0 0.15rem #FDF5BF;
+            box-shadow: 0 0 0.15rem #FDF5BF;
 
     cursor: pointer;
 }
@@ -313,14 +327,16 @@ a {
 .card--privacy {
     margin-bottom: 3rem;    
     background-color: rgba(83, 19, 30, 0.8);
-    box-shadow: 0 0 1rem #53131E, 0 0 2rem #FE5F55;
+    -webkit-box-shadow: 0 0 1rem #53131E, 0 0 2rem #FE5F55;
+            box-shadow: 0 0 1rem #53131E, 0 0 2rem #FE5F55;
 }
 
 .bg-logo--privacy {
     background-image: url(../images/logo/logo-dark_sienna.svg);
     background-repeat: no-repeat;
     background-position: center center;
-    filter: drop-shadow(0 0 0.125rem #FE5F55);        
+    -webkit-filter: drop-shadow(0 0 0.125rem #FE5F55);
+            filter: drop-shadow(0 0 0.125rem #FE5F55);        
 }
 
 .card-title--privacy {
