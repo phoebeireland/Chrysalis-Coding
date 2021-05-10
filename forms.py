@@ -19,8 +19,8 @@ class RegisterForm(FlaskForm):
 
 
 class CreatePost(FlaskForm):
-    title = StringField('Title')
-    content = TextAreaField('Content')
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
     inspirational_quote = StringField('Inspirational Quote')
     submit = SubmitField('Post')
 
