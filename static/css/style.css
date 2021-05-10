@@ -112,6 +112,16 @@ form .marginreset {
     border-color: #003249;
 }
 
+.btn-danger {
+    background-color: #f1473b;
+    color: #000e14;
+    border-color: #000e14;
+}
+
+.btn-danger:hover {
+    background-color: #dd2518;
+}
+
 /* Forms */
 
 .custom-form {
@@ -292,7 +302,7 @@ a {
 /*Privacy*/
 .content--privacy {
     color: #FDF5BF;
-    font-family: 'Montserrat Alternates', sans-serif;    
+    font-family: 'Roboto', sans-serif;    
     margin-top: 77px;    
 }
 
@@ -312,13 +322,13 @@ a {
 .card-title--privacy {
     margin-bottom: 0;
     padding: 5% 0;
-    font-family: 'Courgette', sans-serif, cursive;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 3.5rem;
     text-shadow: 0 0 0.2rem #53131E, 0 0 0.2rem #53131E;
 }
 
 h2.card-subtitle {
-    font-family: 'Courgette', sans-serif, cursive;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 .card-body--privacy {
