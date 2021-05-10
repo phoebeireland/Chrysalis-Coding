@@ -2,15 +2,62 @@
 
 {% block content %}
 
-<div class= "container">
-    <div class= "container4 col-12">
-        <h1 id="welcome-text">About Page</h1>
-      </div>
-    <div class= "row">
-        <div class="container2 col-12">
-            <button id="main-login-button">Login</button>
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center about-title">
+                <h2>About Us</h2>
+            </div>
+        </div>
+        <div class="row about-row page-desc">
+            <div class="col-md-6 text-center">
+                <p>
+                    Chrysalis Coding is a community created to inspire, celebrate and connect women working 
+                    in technology. We created an interactive platform for you to share your experiences and ideas, 
+                    let others know of any upcoming events supporting women in technology, and to share knowledge and resources. 
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{{ url_for('static', filename='images/community-compressed.jpg') }}" 
+                    alt="smiling joyful community of women looking at laptop" class="registerlogin-wit img-fluid">
+            </div>
+        </div>
+        <div class="row my-5 page-desc text-center">
+            <div class="col-md-4 mb-3">
+                <img src="{{ url_for('static', filename='images/pexels-emily-garland-crop.jpg') }}" 
+                    alt="profile pic of Wilma Oberhaust" class="profile-pic rounded-circle mb-3">
+                <p>
+                    The best community of women techies I've come across ever! Overflowing with useful information and always 
+                    pointing me in the right direction in my career!
+                </p>
+                <p class="fst-italic">
+                    Wilma Oberhaust, Munich, Germany
+                </p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="{{ url_for('static', filename='images/pexels-kindel-media-crop.jpg') }}" 
+                    alt="profile pic of Rose Mildrew" class="profile-pic rounded-circle mb-3">
+                <p>
+                    Thanks to a post in Chrysalis Coding I found out about the Mentor to Support programme, met a wonderful 
+                    community of women, and now founded my own company! 
+                </p>
+                <p class="fst-italic">
+                    Rose Mildrew, Fremont, California
+                </p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="{{ url_for('static', filename='images/pexels-pixabay-415829.jpg') }}" 
+                    alt="profile pic of Aisling Green" class="profile-pic rounded-circle mb-3">
+                <p>
+                    As the only woman in our IT department, I always turn to Chrysalis Coding when I want support of other 
+                    women. And they never let me down!
+                </p>
+                <p class="fst-italic">
+                    Aisling Green, Waterford, Ireland
+                </p>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 {% endblock %}
